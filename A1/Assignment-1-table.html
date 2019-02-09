@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>TV Listing</title>
+        <style type="text/css">
+            table{
+                width: 75%;
+                margin: 0px auto;
+            }
+            .hidden {
+                visibility: hidden;
+            }
+            
+            thead {
+                background-color: #000;
+                color: #fff;
+            }
+
+            th{
+                width: 12.5%;
+                font-size: 24px;
+                padding: 0px;
+            }
+
+            td{
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .time{
+                text-align: right;
+            }
+
+            .program1{
+                background-color: aqua;
+            }
+
+            .program2{
+                background-color: darkkhaki;
+            }
+
+            .program3{
+                background-color: blueviolet;
+            }
+
+            .program4{
+                background-color: chartreuse;
+            }
+
+            .program5{
+                background-color: darkgoldenrod;
+            }
+        </style>
+    </head>
+    <body>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th scope="col" id="time" class="hidden">Time</th>
+                    <th scope="col" id="monday">Monday</th>
+                    <th scope="col" id="tuesday">Tuesday</th >
+                    <th scope="col" id="wednesday">Wednesday</th>
+                    <th scope="col" id="thursday">Thursday</th>
+                    <th scope="col" id="friday">Friday</th>
+                    <th scope="col" id="saturday">Saturday</th>
+                    <th scope="col" id="sunday">Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" id="noon" class="time">12:00</th>
+                    <td headers="monday tuesday wednesday noon noon30 one" colspan="3" rowspan="3" class="program1">Ben &amp; Jerry's Show</td>
+                    <td headers="thursday noon" class="program2">Month Shot</td>
+                    <td headers="friday saturday noon noon30 one" colspan="2" rowspan="3" class="program3">World of Rifle</td>
+                    <td headers="sunday noon noon30 one" rowspan="3" class="program4">Wonkiest Mandy</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="noon30" class="hidden">12:30</th>
+                    <td headers="thursday noon30 one" rowspan="2" class="program5">America's Got Belligerent</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="one" class="time">1:00</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="one30" class="hidden">1:30</th>
+                    <td headers="monday tuesday wednesday thursday friday one30 two two30" colspan="5" rowspan="3" class="program4">Snake Survivor</td>
+                    <td headers="saturday one30 two two30" rowspan="3" class="program1">Clipped Century</td>
+                    <td headers="sunday one30 two two30 three three30" rowspan="5" class="program2">Belligerent Minute</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="two" class="time">2:00</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="two30" class="hidden">2:30</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="three" class="time">3:00</th>
+                    <td headers="monday tuesday wednesday thursday three three30 four four30" colspan="4" rowspan="4" class="program3">Belligerent Business Report</td>
+                    <td headers="friday saturday three three30 four four30 five" colspan="2" rowspan="5" class="program5">The Mouse</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="three30" class="hidden">3:30</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="four" class="time">4:00</th>
+                    <td headers="sunday four four30 five" rowspan="3" class="program1">The Black Rifle</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="four30" class="hidden">4:30</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="five" class="time">5:00</th>
+                    <td headers="monday five five30 six six30" rowspan="4" class="program2">Viral Rifle Videos</td>
+                    <td headers="tuesday five five30" rowspan="2" class="program4">Playing Mysteries</td>
+                    <td headers="wednesday five five30" rowspan="2" class="program5">Another Derivative Show</td>
+                    <td headers="thursday five five30 six six30" rowspan="4" class="program1">Our Lady of Perpetual Exemption</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="five30" class="hidden">5:30</th>
+                    <td headers="friday saturday five30 six six30" colspan="2" rowspan="3" class="program2">Clipped</td>
+                    <td headers="sunday five30 six six30" rowspan="3" class="program3">Rifle Wars</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="six" class="time">6:00</th>
+                    <td headers="tuesday wednesday six" colspan="2" class="program3">Police Cops</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="six30" class="hidden">6:30</th>
+                    <td headers="tuesday wednesday six30 seven seven30 eight" colspan="2" rowspan="4" class="program4">That Second Show</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="seven" class="time">7:00</th>
+                    <td headers="monday seven" class="program5">The Mandys</td>
+                    <td headers="thursday friday saturday sunday seven" colspan="4" class="program5">Drum My Ride</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="seven30" class="hidden">7:30</th>
+                    <td headers="monday seven30 eight eight30 nine" rowspan="4" class="program1">All Boogers Considered</td>
+                    <td headers="thursday seven30 eight" rowspan="2" class="program2">Dumb gossip</td>
+                    <td headers="friday saturday sunday seven30 eight" colspan="3" rowspan="2" class="program3">Drum Second</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="eight" class="time">8:00</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="eight30" class="hidden">8:30</th>
+                    <td headers="tuesday eight30 nine" rowspan="2" class="program5">Booger News</td>
+                    <td headers="wednesday thursday friday saturday seven30 nine" colspan="4" rowspan="2" class="program1">Booger Inc.</td>
+                    <td headers="sunday eight30 nine nine30 ten ten30" rowspan="5" class="program2">The Playing Movie</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="nine" class="time">9:00</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="nine30" class="hidden">9:30</th>
+                    <td headers="monday tuesday wednesday thursday friday nine30 ten" colspan="5" rowspan="2" class="program3">The Color Black</td>
+                    <td headers="saturday nine30" class="program4">Invasion of the Rifle Snatchers</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="ten" class="time">10:00</th>
+                    <td headers="saturday ten ten30 eleven eleven30" rowspan="4" class="program5">Married with Hippiess</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="ten30" class="hidden">10:30</th>
+                    <td headers="monday tuesday ten30 eleven eleven30" colspan="2" rowspan="3" class="program1">The Black Mile</td>
+                    <td headers="wednesday ten30 eleven eleven30" rowspan="3" class="program2">Drum Shop</td>
+                    <td headers="thursday friday ten30 eleven eleven30" colspan="2" rowspan="3" class="program4">Belligerent Karaoke</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="eleven" class="time">11:00</th>
+                    <td headers="sunday eleven eleven30" rowspan="2" class="program3">Nick and friends</td>
+                </tr>
+                <tr>
+                    <th scope="row" id="eleven30" class="hidden">11:30</th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

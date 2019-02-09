@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>TV Listing</title>
+        <style type="text/css">
+            table{
+                width: 75%;
+                margin: 0px auto;
+            }
+            .hidden {
+                visibility: hidden;
+            }
+            
+            thead {
+                background-color: #000;
+                color: #fff;
+            }
+
+            th{
+                width: 12.5%;
+                font-size: 24px;
+                padding: 0px;
+            }
+
+            td{
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .time{
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+        // l is number of number of timeslot rows
+        // e is number of days column
+        // b is slot of day start
+        // s is what row to start the show on
+        // t is title
+
+        var htmltable = [
+                    {"l":3,"e":2,"b":0,"s":0,"t":"Ben & Jerry's Show"},
+                    {"l":3,"e":4,"b":0,"s":3,"t":"Snake Survivor"},
+                    {"l":4,"e":3,"b":0,"s":6,"t":"Belligerent Business Report"},
+                    {"l":4,"e":0,"b":0,"s":10,"t":"Viral Rifle Videos"},
+                    {"l":1,"e":0,"b":0,"s":14,"t":"The Mandys"},
+                    {"l":4,"e":0,"b":0,"s":15,"t":"All Boogers Considered"},
+                    {"l":2,"e":4,"b":0,"s":19,"t":"The Color Black"},
+                    {"l":3,"e":1,"b":0,"s":21,"t":"The Black Mile"},
+                    {"l":2,"e":1,"b":1,"s":10,"t":"Playing Mysteries"},
+                    {"l":1,"e":2,"b":1,"s":12,"t":"Police Cops"},
+                    {"l":4,"e":2,"b":1,"s":13,"t":"That Second Show"},
+                    {"l":2,"e":1,"b":1,"s":17,"t":"Booger News"},
+                    {"l":2,"e":2,"b":2,"s":10,"t":"Another Derivative Show"},
+                    {"l":2,"e":5,"b":2,"s":17,"t":"Booger Inc."},
+                    {"l":3,"e":2,"b":2,"s":21,"t":"Drum Shop"},
+                    {"l":1,"e":3,"b":3,"s":0,"t":"Month Shot"},
+                    {"l":2,"e":3,"b":3,"s":1,"t":"America's Got Belligerent"},
+                    {"l":4,"e":3,"b":3,"s":10,"t":"Our Lady of Perpetual Exemption"},
+                    {"l":1,"e":6,"b":3,"s":14,"t":"Drum My Ride"},
+                    {"l":2,"e":3,"b":3,"s":15,"t":"Dumb gossip"},
+                    {"l":3,"e":4,"b":3,"s":21,"t":"Belligerent Karaoke"},
+                    {"l":3,"e":5,"b":4,"s":0,"t":"World of Rifle"},
+                    {"l":5,"e":5,"b":4,"s":6,"t":"The Mouse"},
+                    {"l":3,"e":5,"b":4,"s":11,"t":"Clipped"},
+                    {"l":2,"e":6,"b":4,"s":15,"t":"Drum Second"},
+                    {"l":3,"e":5,"b":5,"s":3,"t":"Clipped Century"},
+                    {"l":1,"e":5,"b":5,"s":19,"t":"Invasion of the Rifle Snatchers"},
+                    {"l":4,"e":5,"b":5,"s":20,"t":"Married with Hippiess"},
+                    {"l":3,"e":6,"b":6,"s":0,"t":"Wonkiest Mandy"},
+                    {"l":5,"e":6,"b":6,"s":3,"t":"Belligerent Minute"},
+                    {"l":3,"e":6,"b":6,"s":8,"t":"The Black Rifle"},
+                    {"l":3,"e":6,"b":6,"s":11,"t":"Rifle Wars"},
+                    {"l":5,"e":6,"b":6,"s":17,"t":"The Playing Movie"},
+                    {"l":2,"e":6,"b":6,"s":22,"t":"Nick and friends"}
+                    ],
+            days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            timeslot = [{"time":"12:00", "slotname":"noon"},
+                        {"time":"12:30", "slotname":"noon30"},
+                        {"time":"1:00", "slotname":"one"},
+                        {"time":"1:30", "slotname":"one30"},
+                        {"time":"2:00", "slotname":"two"},
+                        {"time":"2:30", "slotname":"tw030"},
+                        {"time":"3:00", "slotname":"three"},
+                        {"time":"3:30", "slotname":"three30"},
+                        {"time":"4:00", "slotname":"four"},
+                        {"time":"4:30", "slotname":"four30"},
+                        {"time":"5:00", "slotname":"five"},
+                        {"time":"5:30", "slotname":"five30"},
+                        {"time":"6:00", "slotname":"six"},
+                        {"time":"6:30", "slotname":"six30"},
+                        {"time":"7:00", "slotname":"seven"},
+                        {"time":"7:30", "slotname":"seven30"},
+                        {"time":"8:00", "slotname":"eight"},
+                        {"time":"8:30", "slotname":"eight30"},
+                        {"time":"9:00", "slotname":"nine"},
+                        {"time":"9:30", "slotname":"nine30"},
+                        {"time":"10:00", "slotname":"ten"},
+                        {"time":"10:30", "slotname":"ten30"},
+                        {"time":"11:00", "slotname":"eleven"},
+                        {"time":"11:30", "slotname":"eleven30"}
+                        ];
+
+        function createSchedule(){
+            var f = document.createElement('table');
+            document.body.appendChild(f).id = 'schedule';
+            f.setAttribute('cellpadding', 0);
+            f.setAttribute('cellspacing', 0);
+            createHeader();
+            createBody();
+            removeTRid();
+        }
+
+        function createHeader(){
+            var a = document.createElement('thead'),
+                c = document.createElement('tr'),
+                d = document.createElement('th');
+
+            document.getElementById('schedule').appendChild(a);
+            a.appendChild(c);
+            c.appendChild(d).id = 'time';
+            d.setAttribute('scope', 'col');
+            for (i = 0; i < days.length; i++){
+                var g = document.createElement('th');
+
+                c.appendChild(g).id = days[i];
+                c.lastChild.innerHTML = days[i];
+                g.setAttribute('scope', 'col');
+                g.setAttribute('class', 'day');
+                c.firstChild.classList.add('hidden')
+            }
+        }
+
+        function createBody(){
+            var h = document.createElement('tbody');
+            
+            document.getElementById('schedule').appendChild(h);
+            for(var i = 0; i < timeslot.length; i++){
+                var c = document.createElement('tr'),
+                    d = document.createElement('th'),
+                    f = document.createElement('td');
+                
+                h.appendChild(c);
+                c.id = i;
+                c.appendChild(d).textContent = timeslot[i].time;
+                c.appendChild(d).id = timeslot[i].slotname;
+                d.setAttribute('scope', 'row');
+
+                if (timeslot[i].slotname.includes('30')){
+                    d.classList.add('hidden');
+                }else {
+                    d.classList.add('time');
+                }
+            }
+
+            for(var i = 0; i < htmltable.length; i++){
+                var f = document.createElement('td');
+                switch(htmltable[i].b){
+                    case 0:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e + 1)
+                        
+                        //supposed to set headers by passing the timeslot numbers and number of day columns to function
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e + 1, htmltable[i].s, htmltable[i].b).trim());
+                        
+                        //supposed to set the background-color style property with a random color
+                        f.style.backgroundColor = getBGColor();
+                        
+                        break;
+                     case 1:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e);
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e, htmltable[i].s, htmltable[i].b).trim());
+                        f.style.backgroundColor = getBGColor();
+                        break;
+                    case 2:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e - 1);
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e - 1, htmltable[i].s, htmltable[i].b).trim());
+                        f.style.backgroundColor = getBGColor();
+                        break;
+                    case 3:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e - 2);
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e - 2, htmltable[i].s, htmltable[i].b).trim());
+                        f.style.backgroundColor = getBGColor();
+                        break;
+                    case 4:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e - 3);
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e - 3, htmltable[i].s, htmltable[i].b).trim());
+                        f.style.backgroundColor = getBGColor();
+                        break;
+                    case 5:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e - 4);
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e - 4, htmltable[i].s, htmltable[i].b).trim());
+                        f.style.backgroundColor = getBGColor();
+                        break;
+                    case 6:
+                        document.getElementById(htmltable[i].s).appendChild(f);
+                        f.textContent = htmltable[i].t;
+                        f.setAttribute('rowspan', htmltable[i].l);
+                        f.setAttribute('colspan', htmltable[i].e - 5);
+                        f.setAttribute('headers', getThHead(htmltable[i].l, htmltable[i].e - 5, htmltable[i].s, htmltable[i].b).trim());
+                        f.style.backgroundColor = getBGColor();
+                        break;
+                }
+            }
+        }
+
+        function getThHead(a,b,c,d){
+            var attrHeader = "";
+            var y = document.getElementsByClassName('day');
+            for (var i = 0; i < a; i++){
+                var x = document.getElementById(c).firstChild.id;
+                attrHeader += x + " ";
+                c++;
+            }
+            for (var j = 0; j < b; j++){
+                var day = y[d].id;
+                attrHeader += day + " ";
+                d++
+            }
+            return attrHeader; 
+        }
+        
+        function getBGColor(){
+            var l = "0123456789ABCDEF";
+            var c = "#";
+            for (i = 0; i < 6 ; i++){
+                c += l[Math.floor(Math.random() * 16)];
+            }
+            return c;
+        }
+
+        function removeTRid(){
+            var x = document.getElementsByTagName('tr');
+            for(var i = 0; i < x.length; i++){
+                x[i].removeAttribute('id');
+            }
+        }
+
+        createSchedule();
+    </script>    
+    </body>
+</html>
