@@ -2,12 +2,87 @@
 <html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>TV Listing</title>
+        <title>Form Page</title>
       </head>
   <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
+    <form action="https://domfu.com/app2/cgi/echo.fcgi" method="post" id="myForm">
+      <input type="hidden" name="NSA" value="form2">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="zipCode" form="myForm">
+          Zip/Postal Code: 
+          <input type="text" placeholder="Enter 5 digit zip code" id="zipCode" name="zipCode" size="24" maxlength="10" required pattern="^\d\d\d\d\d(-\d\d\d\d)?$" title="Valid Zip Code examples: 55938 or 33243-5123" spellcheck="false" />
+        </label>
+      </fieldset>
+      <p>
+        <label for="rating" form="myForm">
+          Rating: 
+          <input type="range" id="rating" name="rating" min="-1" max="1" step=".01" list="tickmarks" />
+          <datalist id="tickmarks">
+              <option value="-1" label="0"></option>
+              <option value="-0.8" label="10"></option>
+              <option value="-0.6" label="20"></option>
+              <option value="-0.4" label="30"></option>
+              <option value="-0.2" label="40"></option>
+              <option value="0" label="50"></option>
+              <option value="0.2" label="60"></option>
+              <option value="0.4" label="70"></option>
+              <option value="0.6" label="80"></option>
+              <option value="0.8" label="90"></option>
+              <option value="1" label="100"></option>
+            </datalist>
+        </label>
+      </p>
+      <p>
+        <label for="comments" form="myForm">
+          Comments:
+          <textarea name="comments" placeholder="Enter comments here" id="comments" spellcheck="true"></textarea>
+        </label>
+      </p>
+      <p>
+        Subscribe to our Mailing List:
+        <label for="yes" form="myForm">
+          <input type="radio" name="mail-sub" value="yes" id="yes" /> Yes 
+        </label>
+        <label for="no" form="myForm">
+          <input type="radio" name="mail-sub" value="no" id="no" /> No
+        </label>
+      </p>
+      <fieldset>
+        <legend>Mailing List Subscriptions</legend>
+        <label for="sell-to-spammers">
+          <input type="checkbox" name="spam-options" value="spammers" id="sell-to-spammers" />List to sell to spammers
+        </label>
+        <br />
+        <label for="spam-list">
+          <input type="checkbox" name="spam-options" value="spam" id="spam-list" />Spam List
+        </label>
+      </fieldset>
+      <p>
+        <label for="birthday" form="myForm">
+          Birthday: <input type="date" id="birthday" name="birthday" />
+        </label>
+      </p>
+      <p>
+        <input type="reset" />
+        <input type="submit" name="submitForm" />
+      </p>
+    </form>
+
+    <script type="text/javascript">
+    //<![CDATA[
+      var dateControl = document.querySelector('input[type="date"]'),
+          today =  new Date();
+          date = today.toISOString().slice(0,10);
+          yDay = today.setDate(today.getDate() - 1).toISOString().slice(0,10);
+
+      dateControl.placeholder = date;
+      dateControl.Value = yDay;
+
+    //]]>
+    </script>
   </body>
 </html>
