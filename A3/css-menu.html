@@ -2,45 +2,59 @@
 <html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
   <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <title>Form Page</title>
+      <title>CSS Menu</title>
       <style type="text/css">
-      ul{
-        list-style-type: none;
-      }
-      
-      li{
-        font-size: 19px;
-      }
+        #nav{
+          font-size: 19px;
+          margin: 0px auto;
+        }
+        .menu{
+          position: relative;
+          background-color: #000000;
+          color: #ffffff;
+          border: 3px outset;
+          width: 65px;
+          padding: 8px;
+          margin: 3px;
+          float: left;
+          list-style: none;
+          text-align: center;
+        }
 
-      .menu{
-        border: 3px outset;
-        background: #000000;
-        color: #ffffff;
-        padding: 8px;
-        margin: 3px
-      }
+        .menu:active{
+          border: inset;
+        }
 
-      .menu:active{
-        border: inset;
-      }
+        .menu-content{
+          display: block;
+          position: absolute;
+          margin-bottom: 3px;
+          border: 3px;
+          gap: 3px;
+          top: 45px;
+          left: -35px;
+        }
 
-      #nav{
-        padding: 8px;
-        margin: 3px
-        text
-      }
+        li.menu-content{
+          margin: 6px
+        }
+
+        .menu:active .menu-content{
+          display: block;
+        }
+        
       </style>
   </head>
   <body>
     <ul id="nav">
       <li class="menu">Menu A
-        <ul>
+        <ul class="menu-content">
           <li><a href="https://www.youtube.com/watch?v=YYc2284BnP0" target="_blank">Item 1 A</a></li>
           <li><a href="https://www.youtube.com/watch?v=UrxfZv6KEL0" target="_blank">Item 2 A</a></li>
         </ul>
       </li>
       <li class="menu">Menu B
-        <ul>
+        <ul class="menu-content">
           <li><a href="https://www.youtube.com/watch?v=jM8dCGIm6yc" target="_blank">Item 1 B</a></li>
           <li><a href="https://www.youtube.com/watch?v=kTGVE8S2nT4" target="_blank">Item 2 B</a></li>
         </ul>
