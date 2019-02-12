@@ -12,13 +12,13 @@
       <input type="hidden" name="NSA" value="form2" />
       <fieldset>
         <legend>Personal Information</legend>
-        <label for="zipCode" form="myForm">
+        <label for="zipCode">
           Zip/Postal Code: 
           <input type="text" placeholder="Enter 5 digit zip code" id="zipCode" name="zipCode" size="24" maxlength="10" required pattern="^\d\d\d\d\d(-\d\d\d\d)?$" title="Valid Zip Code examples: 55938 or 33243-5123" spellcheck="false" />
         </label>
       </fieldset>
       <p>
-        <label for="rating" form="myForm">
+        <label for="rating">
           Rating: 
           <input type="range" id="rating" name="rating" min="-1" max="1" step=".01" list="tickmarks" />
           <datalist id="tickmarks">
@@ -37,17 +37,17 @@
         </label>
       </p>
       <p>
-        <label for="comments" form="myForm">
+        <label for="comments">
           Comments:
           <textarea name="comments" placeholder="Enter comments here" id="comments" spellcheck="true"></textarea>
         </label>
       </p>
       <p>
         Subscribe to our Mailing List:
-        <label for="yes" form="myForm">
+        <label for="yes">
           <input type="radio" name="mail-sub" value="yes" id="yes" /> Yes 
         </label>
-        <label for="no" form="myForm">
+        <label for="no">
           <input type="radio" name="mail-sub" value="no" id="no" /> No
         </label>
       </p>
@@ -62,7 +62,7 @@
         </label>
       </fieldset>
       <p>
-        <label for="birthday" form="myForm">
+        <label for="birthday">
           Birthday: <input type="date" id="birthday" name="birthday" />
         </label>
       </p>
