@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -9,9 +10,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <form action="https://domfu.com/app2/cgi/echo.fcgi" method="post" id="myForm">
-      <label for="NSA">&nbsp;
-        <input type="hidden" name="NSA" value="form2" id="NSA" />
-      </label>
+      <input type="hidden" name="NSA" value="form2" id="NSA" />
       <fieldset>
         <legend>Personal Information</legend>
         <label for="zipCode">
@@ -74,7 +73,7 @@
       </p>
     </form>
 
-    <script type="text/javascript">
+    <script>
     //<![CDATA[
       var dateControl = document.querySelector('input[type="date"]'),
           today =  new Date();
