@@ -9,7 +9,9 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <form action="https://domfu.com/app2/cgi/echo.fcgi" method="post" id="myForm">
-      <input type="hidden" name="NSA" value="form2" />
+      <label for="NSA">&nbsp;
+        <input type="hidden" name="NSA" value="form2" id="NSA" />
+      </label>
       <fieldset>
         <legend>Personal Information</legend>
         <label for="zipCode">
@@ -39,7 +41,7 @@
       <p>
         <label for="comments">
           Comments:
-          <textarea name="comments" placeholder="Enter comments here" id="comments" spellcheck="true"></textarea>
+          <textarea name="comments" placeholder="Enter comments here" id="comments" spellcheck="true" rows="3" cols="55"></textarea>
         </label>
       </p>
       <p>
@@ -67,8 +69,8 @@
         </label>
       </p>
       <p>
-        <input type="reset" />
-        <input type="submit" name="submitForm" />
+        <button type="reset" id="reset" name="reset">Reset</button>
+        <button type="submit" name="submit" id="submit">Submit</button>
       </p>
     </form>
 
@@ -77,10 +79,11 @@
       var dateControl = document.querySelector('input[type="date"]'),
           today =  new Date();
           date = today.toISOString().slice(0,10);
-          yDay = today.setDate(today.getDate() - 1).toISOString().slice(0,10);
+          today.setDate(today.getDate() - 1);
+          yDay = today.toISOString().slice(0,10);
 
       dateControl.placeholder = date;
-      dateControl.Value = yDay;
+      dateControl.value = yDay;
 
     //]]>
     </script>
