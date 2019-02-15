@@ -64,27 +64,13 @@
       </fieldset>
       <p>
         <label for="birthday">
-          Birthday: <input type="date" id="birthday" name="birthday" />
+          Birthday: <input type="date" id="birthday" name="birthday" placeholder="2019-02-15" value="2019-02-14" min="2019-01-01" max="2019-03-31" />
         </label>
       </p>
       <p>
-        <button type="reset" id="reset" name="reset">Reset</button>
-        <button type="submit" name="submit" id="submit">Submit</button>
+        <button type="reset" id="reset">Reset</button>
+        <button type="submit" id="submit">Submit</button>
       </p>
     </form>
-
-    <script>
-    //<![CDATA[
-      var dateControl = document.querySelector('input[type="date"]'),
-          today =  new Date();
-          date = today.toISOString().slice(0,10);
-          today.setDate(today.getDate() - 1);
-          yDay = today.toISOString().slice(0,10);
-
-      dateControl.placeholder = date;
-      dateControl.value = yDay;
-
-    //]]>
-    </script>
   </body>
 </html>
