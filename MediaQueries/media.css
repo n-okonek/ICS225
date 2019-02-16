@@ -1,0 +1,72 @@
+p{
+  font-size: 24px;
+  width: 100%;
+}
+
+.portrait{
+  background: #000;
+  color: #fff;
+  display: none;
+}
+
+.landscape{
+  background: #0f0;
+  display: none;
+}
+
+.wide{
+  background: #00f;
+  color: #fff;
+  display: none;
+}
+
+.tall{
+  background: #f00;
+  display: none;
+}
+
+.hd{
+  background: #ff0;
+  display: none;
+}
+
+.big{
+  background: #0ff;
+  display: none;
+}
+
+@media (orientation: portrait){
+  .portrait{
+    display: block;
+  }
+}
+
+@media (orientation: landscape){
+  .landscape{
+    display: block;
+  }
+}
+
+@media (min-width: 300px){
+  .wide{
+    display: block;
+  }
+}
+
+@media (min-height: 300px){
+  .tall{
+    display: block;
+  }
+}
+
+@media (aspect-ratio: 16/9){
+  .hd{
+    display: block;
+  }
+}
+
+@media (min-width: 400px) and (min-height: 400px){
+  .big{
+    display: block;
+  }
+}
