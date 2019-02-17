@@ -1,0 +1,198 @@
+/*this is for people who like it in the dark*/
+body {
+	color:white;
+	background-color:black;
+}
+
+body{margin:0px;}
+
+/*This CSS is provided just to cut down on questions about stuff I do not care about by giving it to you.*/
+section{
+	margin-bottom: 1em;
+}
+
+section div { /* all SECTION's direct children who are DIV tags  */
+	margin: 3em;
+	padding: 15px;
+	border: green solid 2px;
+	background-color: gray;
+	width: 12em;
+	text-align: center;
+}
+
+section.timing_compare > div {/* all SECTION tags with the class "timing_compare" and who's direct children are DIV  */
+	padding-left: 0px; padding-right: 0px; /* this helps with the look of these; notice the text forces text to overflow when the box is too narrow */
+	margin: 1px;
+	width: 10%;
+	width: calc( 10% - 4px );
+	overflow: hidden;
+	
+}
+
+button {
+	font-size: 4em;
+	margin-bottom: 2em;
+}
+
+.combo_deal{
+	border: 1px dotted black;
+	text-align:center;
+}
+.combo_deal div {
+	margin:2px;	
+	padding:2px;
+	display:inline-block;
+}
+
+/*****************************Set animations*********************************/
+.Default{
+	animation: backAndForth 4s ease infinite alternate;
+}
+
+.Linear{
+  animation: backAndForth 4s linear infinite alternate;
+}
+
+.EaseIn{
+  animation: backAndForth 4s ease-in infinite alternate;
+}
+
+.EaseOut{
+	animation: backAndForth 4s ease-out infinite alternate;
+}
+
+.EaseInOut{
+	animation: backAndForth 4s ease-in-out infinite alternate;
+}
+
+.Custom{
+	animation: backAndForth 4s cubic-bezier(1,0,0,1) infinite alternate;
+}
+
+.Step{
+	animation: backAndForth 4s steps(10) infinite alternate;
+}
+
+.zoom{
+	animation: zoom 2s infinite alternate;
+}
+
+.rotate{
+	animation: myRotate 3s linear infinite;
+}
+
+.seesaw{
+	transform-origin: bottom;
+	animation: SeeSaw 2s linear infinite alternate;
+}
+
+.walk{
+	animation: walk 1s linear infinite alternate;
+}
+
+.DDD{
+	animation: threeD 4s linear infinite;
+}
+
+.FUN{
+	animation: hypnotize .01s linear infinite alternate-reverse;
+	color: #f00;
+	font-weight: bold;
+	font-size: 24px;
+	}
+
+.transition1:hover{
+	transform: scale(1.2);
+	transition: transform 1s;
+}
+
+.transition2{
+	transition: transform 1s;
+}
+
+.transition2:hover{
+	transform: scale(1.2);
+}
+
+.combo_deal div{
+		transition: transform 1s;
+}
+
+.combo_deal div:hover{
+	transform-origin: top center;
+	transform: rotate(-45deg);
+}
+/******************************Set Keyframes*********************************/
+
+@keyframes backAndForth{
+	from{
+		margin-left: 0%;
+	}
+	
+	to{
+		margin-left: 90%;
+	}
+}
+
+@keyframes zoom{
+	from{
+		transform: scale(.8);
+	}
+	
+	to{
+		transform: scale(1.2);
+	}
+}
+
+@keyframes myRotate{
+	from{
+		transform: rotate(0deg);
+	}
+	
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes SeeSaw{
+	from{
+		transform: rotate(-10deg);
+	}
+	
+	to{
+		transform: rotate(10deg);
+	}
+}
+
+@keyframes walk{
+	from{
+		transform: rotate(-10deg);
+		transform-origin: top right;
+	}
+	
+	to{
+		transform: rotate(10deg);
+		transform-origin: top left;
+	}
+}
+
+@keyframes threeD{
+	from{
+		transform: perspective(300px) rotateY(0deg);
+	}
+	
+	to{
+		transform: perspective(300px) rotateY(360deg);
+	}
+}
+
+@keyframes hypnotize{
+	from{
+		background-image: repeating-radial-gradient(#000, #fff 10%, #000 20%);
+	}
+	
+	to{
+		background-image: repeating-radial-gradient(#fff, #000 10%, #fff 20%);
+
+	}
+}
