@@ -115,10 +115,10 @@ button {
 }
 
 .combo_deal div{
-		transition: transform 1s;
+	transition: transform 1s;
 }
 
-.combo_deal div:hover{
+.combo_deal:hover div{
 	transform-origin: top center;
 	transform: rotate(-45deg);
 }
