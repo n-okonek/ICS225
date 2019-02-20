@@ -74,7 +74,7 @@ button {
 }
 
 .zoom{
-	animation: zoom 2s infinite alternate;
+	animation: zoom 2s linear infinite alternate;
 }
 
 .rotate{
@@ -193,6 +193,5 @@ button {
 	
 	to{
 		background-image: repeating-radial-gradient(#fff, #000 10%, #fff 20%);
-
 	}
 }
