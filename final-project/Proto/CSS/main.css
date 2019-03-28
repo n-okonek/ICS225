@@ -1,0 +1,125 @@
+/**************** META TAGS *********************/
+
+@font-face {
+  font-family: 'freebooterregular';
+  src: url('../fonts/freebooterupdated-webfont.woff2') format('woff2'),
+       url('../fonts/freebooterupdated-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes loadFade{
+  0% { 
+    top: 0px;
+    color: rgba(0,0,0,0);
+  }
+
+  75%{
+    top: 90px;
+  }
+
+  100% {
+    top: 75px;
+    color: rgba(0,0,0,1);
+  }
+}
+
+
+/**************** Body Styling *********************/
+body {
+  background: url('../images/background-desktop2.jpg') fixed no-repeat left top;
+  font-family: 'freebooterregular', 'papyrus', comic, arial;
+}
+
+#flag { 
+  position:absolute; 
+  top: 448px; 
+  left: 656px 
+}
+
+.site-header{
+  width: 100%;
+}
+
+.site-name{
+  width: auto;
+  position: absolute;
+  left: 675px;
+  animation: loadFade 4s;
+  top: 75px;
+}
+
+.site-name h1 {
+  font-size: 6rem;
+  text-shadow: 3px 2px 20px rgb(255, 255, 255);
+
+}
+
+.content{
+  position: relative;
+  margin-top: 350px;
+  width: 100%;
+  margin-left: 950px;
+}
+
+.menu{
+  
+}
+
+.menu h2{
+  font-size: 5rem;
+  margin-left: 120px;
+  text-shadow: 3px 2px 20px rgb(255, 255, 255);
+}
+
+.menu li{
+  list-style-type: none;
+  float: left;
+  color: rgba(0, 0, 0, 0);
+  padding: 110px 0 0 35px;
+  font-size: 2.5em;
+}
+
+.button-1{
+  background: url('../images/listen-up.png') no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+.button-1:hover{
+  background: url('../images/listen-down.png') no-repeat;
+  color: rgba(0, 0, 0, 1);
+}
+
+.button-2{
+  background: url('../images/crew-up.png') no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+.button-2:hover{
+  background: url('../images/crew-down.png') no-repeat;
+  color: rgba(0, 0, 0, 1);
+}
+
+.button-3{
+  background: url('../images/about-up.png') no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+.button-3:hover{
+  background: url('../images/about-down.png') no-repeat;
+  color: rgba(0, 0, 0, 1);
+}
+
+.button-4{
+  background: url('../images/contac-up.png') no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+.button-4:hover{
+  background: url('../images/contact-down.png') no-repeat;
+  color: rgba(0, 0, 0, 1);
+}
