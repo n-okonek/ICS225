@@ -9,7 +9,7 @@ h.onload = function(){
 	flag.style.marginTop  = -(flag.height/2)+'px';
 	var timer = waveFlag( flag, h.width/10, amp );
 };
-h.src = '../images/flag.png';
+h.src = 'flag.png';
 
 function waveFlag( canvas, wavelength, amplitude, period, shading, squeeze ){
 	if (!squeeze)    squeeze    = 0;

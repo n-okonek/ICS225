@@ -27,14 +27,16 @@
 
 /**************** Body Styling *********************/
 body {
-  background: url('../images/background-desktop2.jpg') fixed no-repeat left top;
+  background: url('../images/background-desktop2.jpg') left top/cover no-repeat fixed;
   font-family: 'freebooterregular', 'papyrus', comic, arial;
 }
 
 #flag { 
-  position:absolute; 
+  /*background: url('../images/flag.png') fixed no-repeat left top;*/
+  position:fixed; 
   top: 448px; 
-  left: 656px 
+  left: 656px;
+  /*display: none;*/
 }
 
 .site-header{
@@ -57,9 +59,9 @@ body {
 
 .content{
   position: relative;
-  margin-top: 350px;
+  padding-top: 350px;
   width: 100%;
-  margin-left: 950px;
+  padding-left: 950px;
 }
 
 .menu{
@@ -72,18 +74,18 @@ body {
   text-shadow: 3px 2px 20px rgb(255, 255, 255);
 }
 
-.menu li{
-  list-style-type: none;
-  float: left;
-  color: rgba(0, 0, 0, 0);
-  padding: 110px 0 0 35px;
-  font-size: 2.5em;
+.menu li {
+  list-style-image: url(../images/listen-up.png)
+}
+
+.menu li > a{
+ }
+
+.menu li:hover > a{
 }
 
 .button-1{
-  background: url('../images/listen-up.png') no-repeat;
-  height: 150px;
-  width: 150px;
+  background: url('../images/listen-up.png') no-repeat ;
 }
 
 .button-1:hover{
