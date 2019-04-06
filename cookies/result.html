@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cooooooookie Crisp Result</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="">-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <form>
+            <label for="firstName">
+                First Name: 
+                <input type="text" name="firstName" id="firstName" readonly />
+            </label>
+                <br />
+            <label for="lastName">
+                Last Name:
+            <input type="text" name="lastName" id="lastName" readonly />
+            </label>
+        </form>
+
+        <script>
+            function getCookie(cname){
+                var key = cname + "=",
+                    decodedCookie = decodeURIComponent(document.cookie),
+                    cookieArray = decodedCookie.split(';');
+
+                for(var i = 0; i < cookieArray.length; i++){
+                    var c = cookieArray[i];
+                    while (c.charAt(0) == ' '){
+                        c = c.substring(1);
+                    }
+
+                    if (c.indexOf(key) == 0){
+                        return c.substring(key.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            document.getElementById('firstName').value = getCookie("fName");
+            document.getElementById('lastName').value = getCookie('lName');
+        </script>
+    </body>
+</html>
