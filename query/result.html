@@ -33,7 +33,7 @@
             x = x.split('&');
             y = x[0].split('=');
             z = x[1].split('=');
-            a = {firstname:y[1], lastname:z[1]};
+            a = {firstname:y[1].replace(/\+/gi, " "), lastname:z[1].replace(/\+/gi, " ")};
             
             document.getElementById('firstName').value = decodeURIComponent(a.firstname);
             document.getElementById('lastName').value = decodeURIComponent(a.lastname);
