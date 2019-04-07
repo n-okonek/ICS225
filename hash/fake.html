@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang='en-us'> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hash-|</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <!-- submission form -->
+    <form action="javascript:copyResult()" method="post" id="submitForm">
+      <label for="firstName">
+          First Name: 
+          <input type="text" name="firstName" id="firstName" />
+      </label>
+          <br />
+      <label for="lastName">
+          Last Name:
+      <input type="text" name="lastName" id="lastName" />
+      </label>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <!-- result form -->
+    <form id="result">
+        <label for="firstNameResult">
+            First Name: 
+            <input type="text" name="firstName" id="firstNameResult" readonly autocomplete="off" />
+        </label>
+            <br />
+        <label for="lastNameResult">
+            Last Name:
+        <input type="text" name="lastName" id="lastNameResult" readonly autocomplete="off" />
+        </label>
+    </form>
+    <script>
+
+      function copyResult(){
+        document.getElementById("firstNameResult").value = document.getElementById("firstName").value;
+        document.getElementById("lastNameResult").value = document.getElementById("lastName").value;
+        location.hash = "result";
+      }
+
+      function getHash(){
+        if (location.hash === ""){
+          document.getElementById('submitForm').hidden = false;
+          document.getElementById('result').hidden = true;
+        }else if (location.hash === "#result"){
+          document.getElementById('submitForm').hidden = true;
+          document.getElementById('result').hidden = false;
+        }
+      }
+
+      getHash();
+      window.addEventListener('hashchange', getHash, false);
+
+    </script>
+  </body>
+</html>
