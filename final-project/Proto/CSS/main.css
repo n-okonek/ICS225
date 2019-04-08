@@ -14,12 +14,9 @@
     color: rgba(0,0,0,0);
   }
 
-  75%{
-    top: 90px;
-  }
 
   100% {
-    top: 75px;
+    top: 2%;
     color: rgba(0,0,0,1);
   }
 }
@@ -46,82 +43,130 @@ body {
 .site-name{
   width: auto;
   position: absolute;
-  left: 675px;
+  left: 35%;
   animation: loadFade 4s;
-  top: 75px;
-}
-
-.site-name h1 {
+  top: 2%;
   font-size: 6rem;
   text-shadow: 3px 2px 20px rgb(255, 255, 255);
-
 }
 
 .content{
   position: relative;
-  padding-top: 350px;
-  width: 100%;
-  padding-left: 950px;
+  margin-top: 350px;
+  width: 47%;
+  margin-left: 950px;
 }
 
 .menu{
-  
+  text-align: center;
 }
 
 .menu h2{
   font-size: 5rem;
-  margin-left: 120px;
   text-shadow: 3px 2px 20px rgb(255, 255, 255);
+  margin: 0px;
 }
 
-.menu li {
-  list-style-image: url(../images/listen-up.png)
+.menu ul{
+  display: inline-block;
+  padding: 0px;
+}
+
+.menu li{
+  list-style-type: none;
+  float: left;
+  width: 150px;
+  height: 150px;
 }
 
 .menu li > a{
- }
-
-.menu li:hover > a{
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: rgba(0,0,0,0);
+  font-size: 3em;
+  padding-top: 120px;
+  transition: color .5s linear; 
 }
 
-.button-1{
-  background: url('../images/listen-up.png') no-repeat ;
+.menu li > a:hover{
+  color: rgb(0,0,0,1);
 }
 
-.button-1:hover{
+li.button-1{
+  background: url('../images/listen-up.png') no-repeat;
+}
+
+li.button-1:hover{
   background: url('../images/listen-down.png') no-repeat;
-  color: rgba(0, 0, 0, 1);
 }
 
 .button-2{
   background: url('../images/crew-up.png') no-repeat;
-  height: 150px;
-  width: 150px;
 }
 
 .button-2:hover{
   background: url('../images/crew-down.png') no-repeat;
-  color: rgba(0, 0, 0, 1);
 }
 
 .button-3{
   background: url('../images/about-up.png') no-repeat;
-  height: 150px;
-  width: 150px;
 }
 
 .button-3:hover{
   background: url('../images/about-down.png') no-repeat;
-  color: rgba(0, 0, 0, 1);
 }
 
 .button-4{
   background: url('../images/contac-up.png') no-repeat;
-  height: 150px;
-  width: 150px;
 }
 
 .button-4:hover{
   background: url('../images/contact-down.png') no-repeat;
-  color: rgba(0, 0, 0, 1);
+}
+
+.footer {
+  bottom: 0px;
+  position: absolute;
+  right: 0px;
+  padding: 10px;
+}
+
+.design-concepts{
+  background: url('../images/compass.png') 0px/100px no-repeat;
+  height: 115px;
+  width: 100px;
+}
+
+.design-concepts summary{
+  list-style-type: none;
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+}
+
+.design-concepts summary:hover{
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.design-drop{
+  position: fixed;
+  background: rgba(0,0,0,.8);
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.design-overlay{
+  background: url('../images/parch-back.png') center no-repeat, url('../images/parch-bottom.png') right top no-repeat, url('../images/parch-top.png') top left no-repeat, url('../images/parch-left.png') bottom center no-repeat, url('../images/parch-right.png') top center no-repeat;
+  position: relative;
+  height: 696px;
+  width: 925px;
+  margin: 7% auto;
+}
+
+.design-close{
+  background: url('../images/crossbones.png') center no-repeat;
 }
