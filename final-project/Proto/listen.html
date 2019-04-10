@@ -2,26 +2,67 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Listen Live & Show Archives | Jolly Roger Radio</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
-        
-     <!--   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-us"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Listen | Jolly Roger Radio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-         <script src="js/flag.js"></script> 
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="css/main.css">
+    
+ <!--   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+
+    <script src="js/flag.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <section class="site-header">
+      <h1 class="site-name">Listen</h1>
+    </section>
+
+    <canvas id="flag"></canvas>
+
+    <section class="menu">
+      <h2>Plot Your Course</h2>
+      <ul>
+        <li class="button-1"><a href="listen.html">Listen</a></li>
+        <li class="button-2"><a href="crew.html">Crew</a></li>
+        <li class="button-3"><a href="about.html">About</a></li>
+        <li class="button-4"><a href="contact.html">Contact</a></li>
+      </ul>
+    </section>
         
-    </body>
+    <section class="content">
+
+    </section>
+
+    <section class="footer">
+      <details class="design-concepts">
+        <summary>Design Concepts</summary>
+        <div class="design-drop">
+          <section class="design-overlay">
+            <a class="design-close" href="javascript:closeDesign()" title="Close"><span style="visibility: hidden">Close</span></a>
+            <section class="design-content">
+              <h1>Homepage Design Concepts</h1>
+              <h2>Main Concepts:</h2>
+              <p>The main idea was to bring the visitor to a very basic landing page. With all of the technical work going in behind the site, mostly server side, I wanted to give the visitor a clean landing so they are able to choose from very limited options to get where they might want to go. Since the main idea behind the site was driven by my passion for radio, and a need to "stick it to the man", I decided to take a cue from movie Pirate Radio and go with an actual pirate themed internet radio station.</p>
+              <h2>Element Concepts:</h2>
+              <p>The menu is laid out in a styled unordered list to give accessibility to screen readers.</p>
+              <p>To give some visual flair, the flag will only be animated in full view. As the screen gets smaller, the script animating will not run and a static version will take its place. This will also ensure that users on mobile devices are not left hanging as the animation eats away at their RAM.</p>
+              <p>To increase contrast on the somewhat already dark background, I added a white text shadow around the text.</p>
+            </section>
+          </section>
+        </div>
+      </details>
+    </section>
+    <script src="js/site.js" async defer></script>-->
+  </body>
 </html>

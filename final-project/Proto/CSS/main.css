@@ -21,8 +21,21 @@
   }
 }
 
+@keyframes designFadeIn{
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
 
 /**************** Body Styling *********************/
+.transition-fade{
+  transition: .4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade{
+  opacity: 0;
+}
+
 body {
   background: url('../images/background-desktop2.jpg') left top/cover no-repeat fixed;
   font-family: 'freebooterregular', 'papyrus', comic, arial;
@@ -143,11 +156,19 @@ li.button-1:hover{
   display: inline-block;
   height: 100%;
   text-align: center;
+  text-shadow: 3px 2px 20px rgb(255, 255, 255);
+  position: relative;
+  top: -37px;
+  font-size: 23px;
 }
 
 .design-concepts summary:hover{
   list-style-type: none;
   cursor: pointer;
+}
+
+details[open] summary ~ * {
+  animation: designFadeIn .3s ease-in-out;
 }
 
 .design-drop{
@@ -168,5 +189,38 @@ li.button-1:hover{
 }
 
 .design-close{
-  background: url('../images/crossbones.png') center no-repeat;
+  background: url('../images/crossbones.png') 0px/50px no-repeat;
+  position: relative;
+  top: 45px;
+  width: 75px;
+  height: 75px;
+  right: -750px;
+  display: inline-block;
+}
+
+.design-content{
+  width: 735px;
+  height: 500px;
+  position: relative;
+  left: 80px;
+  overflow-y: scroll;
+  top: 40px;
+  scrollbar-width: none;
+}
+
+.design-content h1{
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  margin: 20px 0px;
+}
+
+.design-content h2{
+  font-size: 30px;
+  margin: 15px 0px;
+}
+
+.design-content p{
+  font-size: 25px;
+  margin: 10px 0px;
 }
