@@ -10,19 +10,22 @@
 
 @keyframes loadFade{
   0% { 
-    top: 0px;
+    text-shadow: none;
     color: rgba(0,0,0,0);
   }
 
 
   100% {
-    top: 2%;
+    text-shadow: 3px 2px 20px rgb(255, 255, 255);
     color: rgba(0,0,0,1);
   }
 }
 
 @keyframes designFadeIn{
-  0%    {opacity: 0;}
+  0%    {
+    opacity: 0;
+    
+  }
   100%  {opacity: 1;}
 }
 
@@ -39,6 +42,7 @@ html.is-animating .transition-fade{
 body {
   background: url('../images/background-desktop2.jpg') left top/cover no-repeat fixed;
   font-family: 'freebooterregular', 'papyrus', comic, arial;
+  margin: 0px;
 }
 
 #flag { 
@@ -51,33 +55,72 @@ body {
 
 .site-header{
   width: 100%;
+  height: 250px;
+}
+
+.filled{
+  background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .site-name{
   width: auto;
-  position: absolute;
-  left: 35%;
-  animation: loadFade 4s;
-  top: 2%;
+  position: relative;
+  /*! left: 35%; */
+  animation: loadFade 2s;
+  /*! top: 2%; */
   font-size: 6rem;
   text-shadow: 3px 2px 20px rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 0px;
 }
 
 .content{
   position: relative;
-  margin-top: 350px;
-  width: 47%;
-  margin-left: 950px;
+  /*! top: 206px; */
+  /*! width: 47%; */
+  /*! left: 940px; */
+}
+
+.content-background{
+  background: url('../images/map-parchment-vertical.png') center no-repeat;
+  height: 710px;
+  width: 650px;
+  position: absolute;
+  top: 150px;
+  right: 330px;
 }
 
 .menu{
   text-align: center;
+  position: relative;
+}
+
+.hp{
+  left: 950px;
+  top: 160px;
+  width: 610px;
+}
+
+.nav{
+
+  left: 0px;
+  text-align: left;
+  top: -100px;
+  padding-left: 30px;
+  width: 330px;
 }
 
 .menu h2{
-  font-size: 5rem;
   text-shadow: 3px 2px 20px rgb(255, 255, 255);
   margin: 0px;
+}
+
+.hp h2{
+font-size: 5rem;
+}
+
+.nav h2{
+  font-size: 3em;
 }
 
 .menu ul{
@@ -85,21 +128,37 @@ body {
   padding: 0px;
 }
 
+
 .menu li{
   list-style-type: none;
-  float: left;
+
   width: 150px;
   height: 150px;
 }
+
+.hp li{
+  float: left;
+}
+
 
 .menu li > a{
   display: inline-block;
   width: 100%;
   text-decoration: none;
-  color: rgba(0,0,0,0);
   font-size: 3em;
+}
+
+.hp li >a{
+  color: rgba(0,0,0,0);
   padding-top: 120px;
   transition: color .5s linear; 
+}
+
+.nav li >a{
+  color: rgba(0,0,0,1);
+  padding-left: 150px;
+  padding-top: 46px;
+  height: 100px;
 }
 
 .menu li > a:hover{
@@ -205,7 +264,7 @@ details[open] summary ~ * {
   left: 80px;
   overflow-y: scroll;
   top: 40px;
-  scrollbar-width: none;
+  scrollbar-color:  black #c2ba80;
 }
 
 .design-content h1{
