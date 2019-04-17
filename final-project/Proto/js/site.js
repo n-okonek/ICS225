@@ -14,6 +14,37 @@ function resetLiveStream(){
     document.getElementsByClassName('air-status')[0].children[1].setAttribute('style', 'display: visible;');
 }
 
+function setAction(selectObject){
+    var direction = selectObject.value,
+        form = document.getElementById('contact-form');
+    switch (direction){
+        case '': alert("Please select where we should direct your message.");
+        case 'feedback':
+            form.setAttribute('action', "feedback"); // mailto:feedbackaddress@something.com
+            break;
+        case 'compliments':
+            form.setAttribute('action', "compliment"); //mailto:complimentaddress@something.com
+            break;
+        case 'request':
+            form.setAttribute('action', "request"); //mailto:requestaddress@something.com
+            break;
+        case 'complaint':
+            //insert code to roll up scroll and make it walk the plank
+            document.getElementById('direct').children[4].setAttribute('disabled',true);
+            break;
+    }
+}
+
+function ValidateEmail(mail) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+
 /* function getHash(){
     var loc = location.hash;
     loadFlag();

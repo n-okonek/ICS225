@@ -6,24 +6,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Join The Crew | Jolly Roger Radio</title>
+    <title>Contact Us | Jolly Roger Radio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/flag.js"></script>
+    <!--<script src="js/flag.js"></script>-->
     <script src="js/site.js"></script>
   </head>
-  <body>
+  <body class="static">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
     <section class="site-header filled">
-      <h1 class="site-name">Join the Crew</h1>
+      <h1 class="site-name">Contact Us</h1>
       <div class="air-status"><img src="images/On-Air.png" alt="On Air" title="Click to reset air status" style="height: 90px" onclick="resetLiveStream()" /><button onclick="livestream()">Listen Live</button></div>
     </section>
 
-    <canvas id="flag"></canvas>
+    <!--<canvas id="flag" class="static"><img src="flag.png" /></canvas>>-->
 
     <section class="menu nav-h">
       <h2>Plot Your Course</h2>
@@ -34,22 +34,29 @@
         <li class="button-4"><a href="contact.html">Contact</a></li>
       </ul>
     </section>
-
-    <div id="join">
-      <img src="images/recruiting.png" />
-    </div>
      
     <div class="content-background">
-      <section class="content centered">
-        <p>If you think you have what it takes to be on Jolly Roger Radio, feel free to throw us a line with your name and show idea. In true pirate fashion the crew will buddle over your request and you will be informed of their decision.</p>
+      <section class="content">
+        <p>We live by the mantra of "If you can't say anything nice, don't say anything at all." So if you have something to complain about don't bother... we've eliminated that option for you by making it walk the plank. If you do have constructive criticism, want to pat us on the back for doing such a phenomenal job, or anything else positive, use the contact form below.</p>
 
-        <form id="join-form" method="post">
+        <form id="contact-form" action="" method="post">
+          <p>
+            <select id="direct" onchange="setAction(this)">
+              <option value="">How should we direct this message?</option>
+              <option value="feedback">Feedback</option>
+              <option value="compliments">Compliments</option>
+              <option value="requests">Requests for new music</option>
+              <option value="complaint">Complaints</option>
+            </select>
+          </p>
           <p>
             <input id="name" type="text" placeholder="Enter your name" />
           </p>
-
           <p>
-            <textarea id="idea" placeholder="Enter your submission idea here"></textarea>
+              <input id="email" type="text" placeholder="Enter your email address" />
+          </p>
+          <p>
+            <textarea id="message" placeholder="Enter your message here"></textarea>
           </p>
           <button type="submit">Submit</button>
         </form>
