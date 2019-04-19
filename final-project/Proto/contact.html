@@ -25,13 +25,13 @@
 
     <!--<canvas id="flag" class="static"><img src="flag.png" /></canvas>>-->
 
-    <section class="menu nav-h">
+    <section class="menu nav">
       <h2>Plot Your Course</h2>
       <ul>
         <li class="button-1"><a href="index.html">Home</a></li>
         <li class="button-2"><a href="listen.html">Listen</a></li>
-        <li class="button-3"><a href="about.html">About</a></li>
-        <li class="button-4"><a href="contact.html">Contact</a></li>
+        <li class="button-3"><a href="crew.html">Crew</a></li>
+        <li class="button-4"><a href="about.html">About</a></li>
       </ul>
     </section>
      
@@ -39,7 +39,7 @@
       <section class="content">
         <p>We live by the mantra of "If you can't say anything nice, don't say anything at all." So if you have something to complain about don't bother... we've eliminated that option for you by making it walk the plank. If you do have constructive criticism, want to pat us on the back for doing such a phenomenal job, or anything else positive, use the contact form below.</p>
 
-        <form id="contact-form" action="" method="post">
+        <form id="contact-form" name="contact" action="" method="post">
           <p>
             <select id="direct" onchange="setAction(this)">
               <option value="">How should we direct this message?</option>
@@ -50,30 +50,31 @@
             </select>
           </p>
           <p>
-            <input id="name" type="text" placeholder="Enter your name" />
+            <input id="name" name="name" type="text" placeholder="Enter your name" /><br />
           </p>
           <p>
-              <input id="email" type="text" placeholder="Enter your email address" />
+              <input id="email" name="email" type="text" onblur="ValidateEmail(this.value)" placeholder="Enter your email address" />
+              <div id="email-invalid">ARRR, please enter a valid email address.</div>
+              <script>
+                  document.getElementById('email-invalid').hidden = true
+              </script>
           </p>
           <p>
             <textarea id="message" placeholder="Enter your message here"></textarea>
           </p>
           <button type="submit">Submit</button>
         </form>
+
+        <div id="thanks">Thank you for your submission! - this will show upon </div>
+        <script>
+            document.getElementById('thanks').hidden = true
+        </script>
       </section>
     </div>
 
 
 
     <section class="footer">
-      <div id="breadcrumb">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="crew.html">The Crew</a></li>
-          <li>Join the crew</li>
-          </ul>
-      </div>
-
       <details class="design-concepts">
         <summary>Design Concepts</summary>
         <div class="design-drop">

@@ -526,3 +526,10 @@ details[open] summary ~ * {
   width: 925px;
   margin: 6% auto;
 }
+
+.crew-background.sitemap{
+  background: url('../images/sitemap.png') 0px no-repeat;
+  width: 1427px;
+  /*! margin: 6% auto; */
+}
+

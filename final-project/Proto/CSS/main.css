@@ -22,11 +22,31 @@
 }
 
 @keyframes designFadeIn{
-  0%    {
+  0% {
     opacity: 0;
-    
   }
-  100%  {opacity: 1;}
+  100%  {
+    opacity: 1;
+  }
+}
+
+@keyframes rolloutVertical{
+  0%{
+    height: 84px
+  }
+  100%{
+    height: 710px;
+  }
+}
+
+@keyframes unveil{
+  0%{
+    height: 0px;
+  }
+
+  100%{
+    height: 555px;
+  }
 }
 
 /**************** Body Styling *********************/
@@ -81,12 +101,14 @@ body.static{
 }
 
 .content{
+  background: url('../images/desk-vert-back.png') 0px/500px 548px no-repeat;
   position: relative;
   top: 74px;
   width: 500px;
   left: 80px;
   overflow-y: auto;
   height: 555px;
+  animation: unveil 2s linear;
 }
 
 .content p{
@@ -94,12 +116,17 @@ body.static{
 }
 
 .content-background{
-  background: url('../images/map-parchment-vertical.png') center no-repeat;
+  /*background: url('../images/map-parchment-vertical.png') center no-repeat;*/
+  background: url('../images/desk-vert-top.png') top center/650px 84px no-repeat,
+              url('../images/desk-vert-bottom.png') bottom center/650px 84px no-repeat,
+              url('../images/desk-vert-right.png') right top/87px 710px no-repeat, 
+              url('../images/desk-vert-left.png') top left/87px 710px no-repeat;
   height: 710px;
   width: 650px;
   position: absolute;
   top: 150px;
   right: 225px;
+  animation: rolloutVertical 2s linear;
 }
 
 .menu{
@@ -143,7 +170,7 @@ font-size: 5rem;
 }
 
 .nav h2{
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .menu ul{
@@ -177,7 +204,7 @@ font-size: 5rem;
   display: inline-block;
   width: 100%;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .hp li >a{
@@ -545,11 +572,11 @@ option{
 }
 
 #message{
-width: 95%;
-border-radius: 5px;
-padding: 5px;
-font-family: 'freebooterregular', 'papyrus', comic, arial;
-font-size: 1em;
+  width: 95%;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'freebooterregular', 'papyrus', comic, arial;
+  font-size: 1em;
 }
 
 #contact-form button{
@@ -562,4 +589,14 @@ font-size: 1em;
   border: none;
   border-radius: 5px;
   background-color: rgb(0, 0, 0);
+}
+
+#email-invalid{
+  text-align: center;
+  border: rgb(255,0,0) 2px solid;
+  border-radius: 5px;
+  font-size: 1.4em;
+  color: rgb(255,0,0);
+  width: 90%;
+  margin: 0px auto;
 }

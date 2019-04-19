@@ -1,19 +1,22 @@
+// closeDesign is just a function to close the design concepts window which is unable to be closed by clicking the details summary normally.
 function closeDesign(){
     document.getElementsByClassName('design-concepts')[0].removeAttribute('open');
 }
 
-
+// livestream function will be updated to add an event listener for a live stream connection
 function livestream(){
     alert("Functionality work in progress. For now this will toggle the state from On Air to Off Air");
     document.getElementsByClassName('air-status')[0].children[0].attributes[0].nodeValue = "images/Off-Air.png";
     document.getElementsByClassName('air-status')[0].children[1].setAttribute('style', 'display: none;');
 }
 
+//reset liveStream will be refactored once event listener for live stream is running
 function resetLiveStream(){
     document.getElementsByClassName('air-status')[0].children[0].attributes[0].nodeValue = "images/On-Air.png";
     document.getElementsByClassName('air-status')[0].children[1].setAttribute('style', 'display: visible;');
 }
 
+// setAction tracks the value fo the select box on the contact form to direct the message of the contact form, will need separate cgi to hide emails from spiders and spam bots
 function setAction(selectObject){
     var direction = selectObject.value,
         form = document.getElementById('contact-form');
@@ -35,16 +38,32 @@ function setAction(selectObject){
     }
 }
 
-function ValidateEmail(mail) 
-{
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
-  {
-    return (true)
-  }
-    alert("You have entered an invalid email address!")
-    return (false)
+function submitForm(){
+    var form = document.getElementById('contact-form'),
+        thanks = document.getElementById('thanks');
+  
+    form.hidden = true;
+    thanks.hidden = false;
 }
 
+//validate email does exactly that on the contact form, validates email and if invalid displays a warning directly below the email input
+function ValidateEmail(mail){
+    var em = document.getElementById('email-invalid');
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)){
+        em.hidden = true;
+        return (true)
+    }else if(mail === ""){
+            em.hidden = true;
+            return (true)
+    }else{
+        em.hidden = false;
+        return (false)
+    }
+}
+
+
+
+//////////////// Trial code that was scrapped until further development could be done to make it work with 
 /* function getHash(){
     var loc = location.hash;
     loadFlag();
