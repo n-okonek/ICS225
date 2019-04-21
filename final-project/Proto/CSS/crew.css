@@ -1,426 +1,53 @@
-/**************** META TAGS *********************/
-
-@font-face {
-  font-family: 'freebooterregular';
-  src: url('../fonts/freebooterupdated-webfont.woff2') format('woff2'),
-       url('../fonts/freebooterupdated-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@keyframes loadFade{
-  0% { 
-    text-shadow: none;
-    color: rgba(0,0,0,0);
+/***************** Meta Styles **********************/
+@keyframes horizontalRollout{
+  0%{
+    width: 0px;
   }
 
-
-  100% {
-    text-shadow: 3px 2px 20px rgb(255, 255, 255);
-    color: rgba(0,0,0,1);
+  100%{
+    width: 925px;
   }
 }
 
-@keyframes designFadeIn{
-  0%    {
-    opacity: 0;
-    
+@keyframes unveil{
+  0%{
+    width: 0px;
+    overflow: hidden;
+    scrollbar-width: 0px;
   }
-  100%  {opacity: 1;}
+
+  100%{
+    width: 745px;
+    overflow: hidden;
+    scrollbar-width: auto
+  }
 }
 
 /**************** Body Styling *********************/
-.transition-fade{
-  transition: .4s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade{
-  opacity: 0;
-}
-
 body {
   background: url('../images/background-desktop.jpg') left top/cover no-repeat fixed;
-  font-family: 'freebooterregular', 'papyrus', comic, arial;
-  margin: 0px;
-}
-
-#flag { 
-  /*background: url('../images/flag.png') fixed no-repeat left top;*/
-  position:fixed; 
-  top: 448px; 
-  left: 656px;
-  /*display: none;*/
-  z-index: -1;
 }
 
 .site-header{
-  width: 100%;
-  height: 250px;
-  position: fixed;
   top: 0px;
-}
-
-.filled{
-  background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
-}
-
-.site-name{
-  width: auto;
-  position: relative;
-  /*! left: 35%; */
-  animation: loadFade 2s;
-  /*! top: 2%; */
-  font-size: 6rem;
-  text-shadow: 3px 2px 20px rgb(255, 255, 255);
-  text-align: center;
-  margin-top: 0px;
 }
 
 .content{
-  position: relative;
-  top: 74px;
-  width: 727px;
-  left: 86px;
-  overflow-y: auto;
-  height: 555px;
+  background: url(../images/parch-back.png) 25px 10px no-repeat;
+  width: 745px;
+  animation: unveil .6s linear;
 }
 
 .content p{
-  font-size: 1.4em;
   margin-block-start: .5em;
 }
 
-.content-background{
-  background: url('../images/map-parchment-vertical.png') center no-repeat;
-  height: 710px;
-  width: 650px;
-  position: absolute;
-  top: 150px;
-  right: 225px;
-}
-
-.menu{
-  text-align: center;
-  position: relative;
-}
-
-.hp{
-  left: 950px;
-  top: 330px;
-  width: 610px;
-}
-
-.nav{
-  left: 0px;
-  text-align: left;
-  top: 175px;
-  padding-left: 30px;
-  width: 330px;
-}
-
 .nav-h{
- position: fixed;
- margin: 0px auto;
  top: 0px;
 }
 
-.menu h2{
-  text-shadow: 3px 2px 20px rgb(255, 255, 255);
-  margin: 0px;
-}
-
-.nav-h h2{
-  font-size: 2em;
-  text-shadow: 0px 0px 20px rgb(255, 255, 255);
-  color: rgb(213, 201, 201);
-}
-
-
-.hp h2{
-font-size: 5rem;
-}
-
-.nav h2{
-  font-size: 2em;
-}
-
-.menu ul{
-  display: inline-block;
-  padding: 0px;
-}
-
-
-.nav-h ul{
-  margin: 0px
-}
-
-.menu li{
-  list-style-type: none;
-
-  width: 150px;
-  height: 150px;
-}
-
-.hp li{
-  float: left;
-}
-
-.nav-h li{
-  float: left;
-  width: 75px;
-  height: 75px;
-}
-
 .menu li > a{
-  display: inline-block;
-  width: 100%;
-  text-decoration: none;
   font-size: 2em;
-}
-
-.hp li >a{
-  color: rgba(0,0,0,0);
-  padding-top: 120px;
-  transition: color .5s linear; 
-}
-
-.nav li >a{
-  color: rgba(0,0,0,1);
-  padding-left: 150px;
-  padding-top: 46px;
-  height: 75px;
-}
-
-.nav-h li > a{
-  color: rgba(0,0,0,0);
-  padding-top: 65px;
-  transition: color .5s linear; 
-}
-
-.menu li > a:hover{
-  color: rgb(0,0,0,1);
-}
-
-.nav-h li > a:hover{
-  text-shadow: 0px 0px 20px rgb(255, 255, 255);
-}
-
-li.button-1{
-  background: url('../images/listen-up.png') no-repeat;
-}
-
-.nav-h li.button-1{
-  background: url('../images/listen-up.png') 0px/75px no-repeat;
-}
-
-li.button-1:hover{
-  background: url('../images/listen-down.png') no-repeat;
-}
-
-.nav-h li.button-1:hover{
-  background: url('../images/listen-down.png') 0px/75px no-repeat;
-}
-
-.button-2{
-  background: url('../images/crew-up.png') no-repeat;
-}
-
-.nav-h li.button-2{
-  background: url('../images/crew-up.png') 0px/75px no-repeat;
-}
-
-.button-2:hover{
-  background: url('../images/crew-down.png') no-repeat;
-}
-
-.nav-h li.button-2:hover{
-  background: url('../images/crew-down.png') 0px/75px no-repeat;
-}
-
-.button-3{
-  background: url('../images/about-up.png') no-repeat;
-}
-
-.nav-h .button-3{
-  background: url('../images/about-up.png') 0px/75px no-repeat;
-}
-
-.button-3:hover{
-  background: url('../images/about-down.png') no-repeat;
-}
-
-.nav-h .button-3:hover{
-  background: url('../images/about-down.png') 0px/75px no-repeat;
-}
-
-.button-4{
-  background: url('../images/contac-up.png') no-repeat;
-}
-
-.nav-h .button-4{
-  background: url('../images/contac-up.png') 0px/75px no-repeat;
-}
-
-.button-4:hover{
-  background: url('../images/contact-down.png') no-repeat;
-}
-
-.nav-h .button-4:hover{
-  background: url('../images/contact-down.png') 0px/75px no-repeat;
-}
-
-.footer {
-  bottom: 0px;
-  position: fixed;
-  right: 0px;
-  padding: 10px;
-  width: 100%;
-}
-
-.design-concepts{
-  float: right;
-  background: url('../images/compass.png') 0px/100px no-repeat;
-  height: 115px;
-  width: 100px;
-}
-
-.design-concepts summary{
-  list-style-type: none;
-  display: inline-block;
-  height: 100%;
-  text-align: center;
-  text-shadow: 3px 2px 20px rgb(255, 255, 255);
-  position: relative;
-  top: -37px;
-  font-size: 23px;
-}
-
-.design-concepts summary:hover{
-  list-style-type: none;
-  cursor: pointer;
-}
-
-details[open] summary ~ * {
-  animation: designFadeIn .3s ease-in-out;
-}
-
-.design-drop{
-  position: fixed;
-  background: rgba(0,0,0,.8);
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-}
-
-.design-overlay{
-  background: url('../images/parch-back.png') center no-repeat, url('../images/parch-bottom.png') right top no-repeat, url('../images/parch-top.png') top left no-repeat, url('../images/parch-left.png') bottom center no-repeat, url('../images/parch-right.png') top center no-repeat;
-  position: relative;
-  height: 696px;
-  width: 925px;
-  margin: 7% auto;
-}
-
-.design-close{
-  background: url('../images/crossbones.png') 0px/50px no-repeat;
-  position: relative;
-  top: 45px;
-  width: 75px;
-  height: 75px;
-  right: -750px;
-  display: inline-block;
-}
-
-.design-content{
-  width: 735px;
-  height: 500px;
-  position: relative;
-  left: 80px;
-  overflow-y: scroll;
-  top: 40px;
-  scrollbar-color:  rgb(89,50,52) rgb(226,200,151);
-}
-
-.design-content h1{
-  text-align: center;
-  width: 100%;
-  font-size: 40px;
-  margin: 20px 0px;
-}
-
-.design-content h2{
-  font-size: 30px;
-  margin: 15px 0px;
-}
-
-.design-content p{
-  font-size: 25px;
-  margin: 10px 0px;
-}
-
-.show-archive{
-  border: 3px solid rgba(89, 50, 52);
-  border-radius: 10px;
-  padding-left: 10px;
-  color: rgb(89, 50, 52);
-  margin-bottom: 15px;
-  font-size: 25px;
-  margin-right: 15px;
-}
-
-.show-archive audio{
-  margin: 0px auto;
-  display: block;
-  border-radius: 5px;
-  margin-bottom: 10px
-}
-
-.air-status{
-  position: absolute;
-  top: 10px;
-  right: 25px;
-}
-
-.air-status img{
-  float: left;
-}
-
-.air-status button{
-  display: block;
-  float: right;
-  width: 200px;
-  margin-top: 30px;
-  margin-left: 15px;
-  font-family: 'freebooterregular', 'papyrus', comic, arial;
-  font-size: 35px;
-  color: rgb(57, 204, 11);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 15px rgb(57, 204, 11);
-  background-color: rgb(0,0,0);
-}
-
-.join{
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.4em;
-  color: rgb(89, 50, 52);
-}
-
-.join a{
-  color: rgb(89, 50, 52);
-}
-
-.bio{
-  border: 3px solid rgba(89, 50, 52);
-  border-radius: 10px;
-  padding-left: 10px;
-  color: rgb(89, 50, 52);
-  margin-bottom: 15px;
-  font-size: 1.4em;
-  margin-right: 15px;
-  height: auto;
 }
 
 .content img {
@@ -430,101 +57,16 @@ details[open] summary ~ * {
   margin-top: 15px
 }
 
-.bio p{
-  margin-top: 10px;
-}
-
-.bio a{
-  color: rgb(89, 50, 52);
-}
-
-#join {
-  position: relative;
-  top: 210px;
-  left: 300px;
-  width: 460px;
-}
-
-#name{
-  width: 95%;
-  border-radius: 5px;
-  height: 25px;
-  padding: 5px;
-  font-family: 'freebooterregular', 'papyrus', comic, arial;
-  font-size: 1em;
-}
-
-#idea{
-  width: 95%;
-  border-radius: 5px;
-  padding: 5px;
-  font-family: 'freebooterregular', 'papyrus', comic, arial;
-  font-size: 1em;
-}
-
-#join-form button{
-  display: block;
-  width: 200px;
-  margin: 0px auto;
-  font-family: 'freebooterregular', 'papyrus', comic, arial;
-  font-size: 35px;
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(0, 0, 0);
-}
-
-.centered{
-  top: 175px;
-}
-
-#breadcrumb{
-  background: url('../images/breadcrumb.png');
-  height: 113px;
-  width: 345px;
-  float: left;
-}
-
-#breadcrumb li{
-  color: rgb(88, 48, 52);
-  list-style-type: none;
-  font-size: 1.1em;
-}
-
-#breadcrumb > ul > li > a{
-  display: block;
-  color: rgb(88, 48, 52);
-  text-decoration: none;
-  width: 60px;
-}
-
-#breadcrumb > ul > li > a:hover{
-  text-decoration: underline;
-}
-
-#breadcrumb li:nth-child(1){
-  position:relative;
-  top: 45px;
-}
-
-#breadcrumb li:nth-child(2){
-  position: relative;
-  left: 100px;
-  top: -5px;
-}
-
-#breadcrumb li:nth-child(3){
-  position: relative;
-  left: 185px;
-  top: -43px;
-}
-
 .crew-background{
-  background: url('../images/parch-back.png') center no-repeat, url('../images/parch-bottom.png') right top no-repeat, url('../images/parch-top.png') top left no-repeat, url('../images/parch-left.png') bottom center no-repeat, url('../images/parch-right.png') top center no-repeat;
+  background: url('../images/parch-bottom.png') right top no-repeat,
+              url('../images/parch-top.png') top left no-repeat,
+              url('../images/parch-left.png') bottom center no-repeat,
+              url('../images/parch-right.png') top center no-repeat;
   position: relative;
   height: 696px;
   width: 925px;
   margin: 6% auto;
+  animation: horizontalRollout .6s linear;
 }
 
 .crew-background.sitemap{
