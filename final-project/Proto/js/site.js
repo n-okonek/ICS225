@@ -1,3 +1,16 @@
+$(document).ready(function(){
+    $('.transition').css("display", "none");
+    $('.transition').fadeIn(1000);
+});
+
+$.preloadImages = function(){
+    for (var i = 0; i < arguments.length; i++){
+        $("<img />").attr("src", arguments[i]);
+    }
+}
+
+$.preloadImages('images/about-down.png', 'images/contact-down.png', 'images/crew-down.png', 'images/listen-down.png');
+
 // closeDesign is just a function to close the design concepts window which is unable to be closed by clicking the details summary normally.
 function closeDesign(){
     document.getElementsByClassName('design-concepts')[0].removeAttribute('open');
@@ -61,49 +74,142 @@ function ValidateEmail(mail){
     }
 }
 
+// 
+$('a.hptonav').click(function(event){
+    event.preventDefault();
+    $('.hp').animate({
+        left: 0,
+        top: 175,
+        paddingLeft: 30,
+        width: 330
+    }, 1000);
+    $('.hp > h2').animate({
+        fontSize: '3em'
+    }, 1000);
+    $('.hptonav').animate({
+        paddingLeft: 150,
+        paddingTop:46,
+        height: 75
+    }, 1000);
+    $('.hp li').attr('style','float: none;');
+    $('.hp').attr('style','text-align: left;');
+    redirectPage(this.href);
+});
 
+$('a.navtohp').click(function(event){
+    event.preventDefault();
+    $('.content-background').slideUp();
+    $('.nav').animate({
+        left: 950,
+        top: 330,
+        width: 610,
+        paddingLeft: 0
+    }, 1000);
+    $('.nav > h2').animate({
+        fontSize: '5rem'
+    }, 1000);
+    $('.navtohp').animate({
+        paddingTop:120,
+        paddingLeft:0,
+        height:150
+    }, 1000);
+    $('.nav li').attr('style', 'float: left;');
+    $('.nav').attr('style', 'text-align: center;');
+    $('body').fadeOut(1000);
+    redirectPage(this.href);
+});
 
-//////////////// Trial code that was scrapped until further development could be done to make it work with 
-/* function getHash(){
-    var loc = location.hash;
-    loadFlag();
-    if l
-    setCrewDisplay(loc);
-} 
+$('a.navtonavh').click(function(event){
+    event.preventDefault();
+    $('.content-background').slideUp();
+    $('.nav').animate({
+        top: 0,
+        position: 'fixed',
+    }, 1000);
+    $('.nav > h2').animate({
+        fontSize: "2em",
+        color: "rgb(213, 201, 201)",
+        textShadow: "0px 0px 20px rgb(255,255,255)"
+    }, 1000);
+    $('.nav li').animate({
+        width: 75,
+        height: 75
+    }, 1000);
+    $('.button-1').attr('style', 'background: url("images/listen-up.png") 0px/75px no-repeat;');
+    $('.button-2').attr('style', 'background: ur;("images/crew-up.png") 0px/75px no-repeat;');
+    $('.button-3').attr('style', 'background: ur;("images/about-up.png") 0px/75px no-repeat;');
+    $('.button-4').attr('style', 'background: ur;("images/contac-up.png") 0px/75px no-repeat;');
+    $('.nav li').attr('style', 'float: left;')
+    $('.nav > ul > li > a').animate({
+        fontSize: "2em",
+        paddingTop: 65,
+        opacity: 0
+    }, 1000);
+    redirectPage(this.href);
+});
 
-function setCrewDisplay(loc){
-    switch (loc){
-        case '':
-            var menu = document.getElementsByClassName('menu')[0];
-            menu.classList = 'menu nav';
-            document.getElementsByTagName('title')[0].textContent = "The Crew | Jolly Roger Radio";
-            document.getElementsByClassName('site-name')[0].hidden=true;
-            document.getElementsByClassName('site-name')[0].textContent = "The Crew";
-            document.getElementsByClassName('site-name')[0].hidden=false;
-            document.getElementById('join').hidden = true;
-            document.getElementById('join-form').hidden = true;
-            document.getElementsByClassName('join')[0].hidden = false;
-            for (i = 0; i < document.getElementsByClassName('bio').length; i++){
-                document.getElementsByClassName('bio')[i].hidden = false;
-            }
-            break;
-        
-        case '#join':
-            var menu = document.getElementsByClassName('menu')[0];
-            menu.classList.remove('nav');
-            menu.classList.add('nav-h');
-            document.getElementsByTagName('title')[0].textContent = "Join The Crew | Jolly Roger Radio";
-            document.getElementsByClassName('site-name')[0].hidden=true;
-            document.getElementsByClassName('site-name')[0].textContent = "Join The Crew";
-            document.getElementsByClassName('site-name')[0].hidden=false;
-            document.getElementById('join').hidden = false;
-            document.getElementsByClassName('join')[0].hidden = true;
-            for (i = 0; i < document.getElementsByClassName('bio').length; i++){
-                document.getElementsByClassName('bio')[i].hidden = true;
-            }
-            break;
-    }
+$('a.navhtonav').click(function(event){
+    event.preventDefault();
+    $('#join').slideUp();
+    $('.content-background').slideUp();
+    $('#breadcrumb').animate({
+        left: -350,
+    }, 1000);
+    $('.nav-h').attr('style', 'text-align: left;');
+    $('.nav-h').animate({
+        left: 0,
+        top: 175,
+        paddingLeft: 30,
+        width: 330
+    }, 1000);
+    $('.nav-h > h2').animate({
+        fontSize: '3em',
+        textShadow: '3px 2px 20px rgb(255, 255, 255)',
+        color: 'rgb(0, 0, 0)'
+    },1000);
+    $('.button-1').attr('style', 'background: url("images/listen-up.png") no-repeat; float: none;');
+    $('.button-2').attr('style', 'background: url("images/crew-up.png") no-repeat; float: none;');
+    $('.button-3').attr('style', 'background: url("images/about-up.png") no-repeat; float: none;');
+    $('.button-4').attr('style', 'background: url("images/contac-up.png") no-repeat; float: none;');
+    $('.nav-h li').animate({
+        width: 150,
+        height: 150
+    }, 1000);
+    $('.nav-h > ul > li > a').animate({
+        fontSize: "3em",
+        paddingLeft: 150,
+        paddingTop:46,
+        height: 75,
+        opacity: 1
+    }, 1000);
+    $('.crew-background.sitemap').animate({
+        width: 0
+    }, 1000);
+    redirectPage(this.href);
+});
+
+$('a.navhtohp').click(function(event){
+    event.preventDefault();
+    $('body').fadeOut(1000);
+    redirectPage(this.href);
+});
+
+$('a.navtonav').click(function(event){
+    event.preventDefault();
+    $('.content-background').slideUp(1000);
+    redirectPage(this.href);
+});
+
+$('a.navhtonavh').click(function(event){
+    event.preventDefault();
+    $('.crew-background.sitemap').animate({
+        width: 0
+    }, 1000);
+    redirectPage(this.href);
+})
+
+function redirectPage(link){
+    setTimeout(function(){
+        window.location = link;
+    }, 1000);
 }
-
-window.addEventListener('hashchange', getHash, false);
-window.addEventListener('load', getHash, false); */

@@ -53,11 +53,33 @@
   }
 }
 
+@keyframes flyIn{
+  0%{
+    left: -350px;
+  }
+  100%{
+    left: 0px;
+  }
+}
+
 /**************** Body Styling *********************/
 body {
-  background: url('../images/background-desktop2.jpg') left top/cover no-repeat fixed;
+  background: #000000;
   font-family: 'freebooterregular', 'papyrus', comic, arial;
   margin: 0px;
+  overflow: hidden;
+}
+
+body.static{
+  background: url('../images/background-desktop.jpg') left top/cover no-repeat fixed;
+}
+
+#background{
+  background: url('../images/background-desktop2.jpg') left top/cover no-repeat fixed;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -2;
 }
 
 #flag { 
@@ -67,10 +89,6 @@ body {
   left: 656px;
   /*display: none;*/
   z-index: -1;
-}
-
-body.static{
-  background: url('../images/background-desktop.jpg') left top/cover no-repeat fixed;
 }
 
 .site-header{
@@ -104,6 +122,10 @@ body.static{
   height: 555px;
   animation: unveil .6s linear;
   overflow-y: auto;
+}
+
+.content.sitemap{
+  background: none;
 }
 
 .content p{
@@ -155,6 +177,7 @@ body.static{
 .nav-h{
  position: fixed;
  margin: 0px auto;
+ z-index: 1;
 }
 
 .menu h2{
@@ -225,7 +248,8 @@ font-size: 5rem;
 .nav-h li > a{
   color: rgba(255,255,255,0);
   padding-top: 65px;
-  transition: color .5s linear; 
+  transition: color .5s linear;
+  font-size: 2em;
 }
 
 .menu li > a:hover{
@@ -507,9 +531,11 @@ details[open] summary ~ * {
 
 #breadcrumb{
   background: url('../images/breadcrumb.png');
+  position: relative;
   height: 113px;
   width: 345px;
   float: left;
+  animation: flyIn .6s linear;
 }
 
 #breadcrumb li{
