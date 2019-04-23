@@ -10,14 +10,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/flag.js"></script>
-    <script src="js/site.js"></script>
     <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/flag.js"></script>
   </head>
-  <body>
+  <body class="transition">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div id="background"></div>
     
     <section class="site-header">
         <h1 class="site-name">Jolly Roger Radio</h1>
@@ -28,10 +28,10 @@
     <section class="menu hp">
       <h2>Plot Your Course</h2>
       <ul>
-        <li class="button-1"><a href="listen.html">Listen</a></li>
-        <li class="button-2"><a href="crew.html">Crew</a></li>
-        <li class="button-3"><a href="about.html">About</a></li>
-        <li class="button-4"><a href="contact.html">Contact</a></li>
+        <li class="button-1"><a href="listen.html" class="hptonav">Listen</a></li>
+        <li class="button-2"><a href="crew.html"  class="hptonav">Crew</a></li>
+        <li class="button-3"><a href="about.html" class="hptonav">About</a></li>
+        <li class="button-4"><a href="contact.html" class="hptonav">Contact</a></li>
       </ul>
     </section>
 
@@ -54,5 +54,7 @@
         </div>
       </details>
     </section>
+
+    <script src="js/site.js"></script>
   </body>
 </html>
