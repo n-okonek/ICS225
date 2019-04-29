@@ -38,11 +38,12 @@
     </section>
 
     <div id="join">
-      <img src="images/recruiting.png" />
+      <img src="images/recruiting.png" alt="recruiting poster" />
     </div>
      
     <div class="content-background">
       <section class="content">
+        <h2> Do you Have what it takes?</h2>
         <p>If you think you have what it takes to be on Jolly Roger Radio, feel free to throw us a line with your name and show idea. In true pirate fashion the crew will buddle over your request and you will be informed of their decision.</p>
 
         <form id="join-form" method="post">
@@ -60,7 +61,7 @@
 
 
 
-    <section class="footer">
+    <div class="footer">
       <div id="breadcrumb">
         <ul>
           <li><a href="index.html" class="navhtohp">Home</a></li>
@@ -72,19 +73,24 @@
       <details class="design-concepts">
         <summary>Design Concepts</summary>
         <div class="design-drop">
-          <section class="design-overlay">
+          <div class="design-overlay">
             <a class="design-close" href="javascript:closeDesign()" title="Close"><span style="visibility: hidden">Close</span></a>
             <section class="design-content">
-              <h1>Crew Page Design Concepts</h1>
+              <h1>Join the Crew Page Design Concepts</h1>
               <h2>Main Concepts:</h2>
-              <p></p>
+              <p>This page is intended for people to request a show. I realize now after looking at the page, that I did not include an email address field for the crew to get back to the applicant.</p>
               <h2>Element Concepts:</h2>
-              <p></p>
+              <p>In the lower left corner are the breadcrumb links. Currently these are hardcoded to be shown in their respective heirarchy. I would eventually like to be able to make that dynamic based on the referrer URL from the DOM. With that being said, I would also like to see the layer that the breadcrumbs reside in be shown if they are coming from a page that is internal, but external URL referrers would not pop the breadcrumbs.</p>
+              <p>I put a recruiting poster over the flag, to give a sparse page some more flare. However, I think this would be a prime example of where I should not allow the flag to be animated, due to the fact that it is covered and this page doesn't really need the extra bandwidth usage</p>
+              <p>The form is a simple form that will go to the "captain" who ever that may be... possibly the program director. I styled the form to be inline with the styling of the site.</p>
+              <p>I noticed that the menu does not have a link to the crew page, which might be problematic when I get into making the breadcrumbs more dynamic. However, there is still a way back to the crew page through the breadcrumbs, but it does not seem very intuitive.</p>
+              <p>The remaining elements on the page are pretty much the same as they were on other pages.</p>
+              <p>This compass point will ultimately go to the <a href="sitemap.html">sitemap</a></p>
             </section>
-          </section>
+          </div>
         </div>
       </details>
-    </section>
+    </div>
     <script src="js/site.js"></script>
   </body>
 </html>
